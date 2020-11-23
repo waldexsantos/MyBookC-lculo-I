@@ -1,0 +1,94 @@
+\newcommand{\emconstrucao}{
+  \begin{tabular}{|c|}\hline
+    Em construção ... Gostaria de participar na escrita deste livro?\\ Procure o Prof.  \href{mailto:waldexsantos@gmail.com}{Valdex Santos}\\\hline
+  \end{tabular}
+}
+
+\newcommand{\construirSec}{
+\begin{tabular}{|c|}\hline
+  Esta seção (ou subseção) está sugerida. Participe da sua escrita.\\ Procure o prof.  \href{mailto:waldexsantos@gmail.com}{Valdex Santos}\\\hline
+\end{tabular}
+}
+
+\newcommand{\construirExeresol}{
+  \begin{center}
+    \begin{tabular}{|c|}\hline
+      Esta seção carece de exercícios resolvidos. Participe da sua escrita.\\
+      Procure o prof.  \href{mailto:waldexsantos@gmail.com}{Valdex Santos}\\\hline
+    \end{tabular}
+  \end{center}
+}
+
+\newcommand{\construirExer}{
+  \begin{center}
+    \begin{tabular}{|c|}\hline
+      Esta seção carece de exercícios. Participe da sua escrita.\\
+     Procure o Prof. \href{mailto:waldexsantos@gmail.com}{Valdex Santos}\\
+     \hline
+    \end{tabular}
+  \end{center}
+}
+
+\newcommand{\construirResp}{
+\begin{center}
+  Este exercício está sem resposta sugerida. Proponha uma resposta.\\
+  \Procure o Prof. \href{mailto:waldexsantos@gmail.com}{Valdex Santos}
+\end{center}
+}
+
+
+
+%=========================================================================================
+%DEFININDO NOVO ESTILO DE CAPÍTULO E SEÇÃO- VER PAG.: https://www.overleaf.com/learn/latex/Sections_and_chapters#Document_chapters_and_sections_in_a_Book%2FReport
+\usepackage{titlesec}
+ \titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\LARGE\itshape} % format
+{Capítulo  \ \thechapter} % label
+{0.8ex} % sep
+{
+    \rule{\textwidth}{1pt}
+    \vspace{0.5ex}
+    \centering
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+ 
+ %SEÇÃO
+\titleformat{\section}[hang]
+{\Large\bfseries}
+{\thesection.}{0.5em}{}
+ 
+\titlespacing*{\section}{0pt}{*2}{*2}
+%==========================================================================================
+% DEFININDO NOVO AMBIENTE TEXTO AO LADO
+\newenvironment{Sidebar}
+   {\wrapfigure{r}{0.43\textwidth}\vspace{-3em}\tcolorbox[colframe=black!50!white]\footnotesize}
+   {\endtcolorbox\vspace{2em}\endwrapfigure}
+   \begin{comment}
+   \begin{Sidebar}
+{\centering\bfseries Title \\[0.5em]}
+\blindtext[1]
+\end{Sidebar} 
+\end{comment}
+  
+  
+%MBINENTE PARA RECUO COM QUOTE E COMPACTENUM PRA OPOÇÕES NOS EXERCICIOS
+\newenvironment{opcexer}[1]
+{%
+    \begin{quote}
+    \vspace{-0.2cm}
+    \onehalfspacing
+       \begin{enumerate}[#1]
+}%
+ {%
+    \end{enumerate}
+    \end{quote}
+}%
+
+
+
+

@@ -1,0 +1,75 @@
+  \theoremstyle{plain}          %   bold title, italic body
+  \newtheorem{teo}{Teorema}[chapter]
+  \newtheorem{lem}{Lema}[chapter]
+  \newtheorem{prop}{Proposição}[chapter]
+  \newtheorem{corol}{Corolário}[chapter]
+  \newtheorem{definition}{Definição}[chapter]
+  \theoremstyle{remark}           % italic title, romman body
+ % \theoremstyle{definition}       % italic title, romman body
+  \newtheorem{obs}{Observação}[chapter]
+  \newtheorem{ex}{\bfseries\upshape Exemplo}[chapter]
+
+\newenvironment{dem}{\begin{proof}}{\end{proof}}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Exercises and Answers %%%%
+\usepackage[answerdelayed,lastexercise]{exercise}
+\counterwithin{Exercise}{chapter}
+\counterwithin{Answer}{chapter}
+\renewcommand{\ExerciseHeaderTitle}{({\it \ExerciseTitle})}
+\renewcommand{\ExerciseName}{\hspace{-0.6cm}E}
+\renewcommand{\ExerciseHeader}{{\textbf{\large\ExerciseName~\ExerciseHeaderNB\ExerciseHeaderTitle\ExerciseHeaderOrigin}}}
+\renewcommand{\ExerciseHeader}{\textbf{\ExerciseName\ \ExerciseHeaderNB.}}
+
+% change font for answers header
+\renewcommand{\AnswerHeader}{\tiny\textbf{\ExerciseName\ \ExerciseHeaderNB.}\smallskip}
+% change font for answers list header
+\renewcommand{\AnswerListHeader}{{\tiny\textbf{\AnswerListName\
+(\ExerciseListName\ \ExerciseHeaderNB)\ ---\ }}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{exer}
+{\begin{Exercise}}
+{\end{Exercise}}
+
+\newenvironment{resp}
+{\begin{Answer}\begin{tiny}}
+{\end{tiny}\end{Answer}}
+
+\newenvironment{sol}
+ {\begin{proof}[\bfseries\upshape Solução:]}
+  {\end{proof}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exercícios Resolvidos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{exeresol}{ER}[chapter]
+\newenvironment{resol}
+{\vspace{-0.5cm}\let\oldqedsymbol=\qedsymbol
+  \renewcommand{\qedsymbol}{$\blacksquare$}
+  \begin{proof}[\bfseries\upshape Resolução:\hspace{-0.4cm}]~}
+  {\end{proof}
+  \renewcommand{\qedsymbol}{\oldqedsymbol}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{solut}
+{\begin{solution}~}
+{\end{solution}
+\vspace{0.2cm}
+\hrule
+\vspace{0.2cm}
+%\noindent$\rule{0pt}{0pt}$\hspace{-0.8ex}\xrfill[0.7ex]{1 pt}[red]$\blacksquare$\xrfill[0.7ex]{1 pt}[red]
+}
+
+%FORMATANDO AS REFERÊNCIAS
+\usepackage[%
+    alf,
+    abnt-emphasize=bf,
+    bibjustif,
+    recuo=0cm,
+    abnt-url-package=url,       % Utiliza o pacote url
+    abnt-refinfo=yes,           % Utiliza o estilo bibliográfico abnt-refinfo
+    abnt-etal-cite=3,
+    abnt-etal-list=3,
+    abnt-thesis-year=final
+]{abntex2cite}        

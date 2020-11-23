@@ -1,0 +1,108 @@
+\newcommand{\sen}{\operatorname{sen}\,}
+\newcommand{\senh}{\operatorname{senh}\,}
+\renewcommand{\sin}{\operatorname{sen}\,}
+\renewcommand{\sinh}{\operatorname{senh}\,}
+\newcommand{\tg}{\operatorname{tg}\,}
+\newcommand{\arc}{\operatorname{arc}}
+%\newcommand{\tg}{\operatorname{tg}}
+\newcommand{\cotg}{\operatorname{cotg}}
+\newcommand{\cosec}{\operatorname{cosec}}
+\newcommand{\cossec}{\operatorname{cossec}}
+\newcommand{\p}{\partial}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Dom}{\operatorname{Dom}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\sign}{\operatorname{sign}}
+\newcommand{\am}{$a$}
+\newcommand{\f}{$f$}
+\newcommand{\g}{$g$}
+\newcommand{\hm}{$h$}
+\newcommand{\x}{$x$}
+\newcommand{\y}{$y$}
+\newcommand{\xo}{$x_0$}
+
+%COMANDO DE LINK GEOGEBRA
+\newcommand{\geogebra}{\href{https://www.geogebra.org/}{GeoGebra}}
+%%%% indexing %%%%
+
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%COMANDOS DE AMBIENTES MATEMÁTICO
+\newcommand{\mat}[1]{$#1$}%modo matemático%
+  \newcommand{\matt}[1]{$$#1$$}%mdoo matemático em destaque
+  \newcommand{\sistema}[2]{$$\left\{\begin{array}{l} #1\\\\ #2\end{array}\right.$$}
+\newcommand{\sistemaeq}[3][1]{\begin{equation}\left\{\begin{array}{l} #2\\\\ #3\end{array}\right.\label{#1}\end{equation}}
+\newcommand{\intg}[1]{\int #1 \, dx} %Integral indefinida
+\newcommand{\intdef}[3]{\int_{#1}^{#2} #3 \, dx} %integral definida
+%%%%% COMANDOS MATEMÁTICOS DE MATRIZ E VETORES  %%%%%%%%%%%%%
+\newcommand{\matdd}[4]{\begin{bmatrix} #1&#2\\#3&#4 \end{bmatrix}}
+\newcommand{\matddd}[9]{\begin{bmatrix} #1&#2&#3 \\ #4&#5&#6 \\ #7&#8&#9 \end{bmatrix}}
+\newcommand{\vetdd}[2]{\begin{bmatrix} #1 \\#2 \end{bmatrix}}
+\newcommand{\vetddd}[3]{\begin{bmatrix} #1 \\ #2\\ #3 \end{bmatrix}}
+\newcommand{\dica}{\ding{43}}
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+%NOVOS COMANDOS PARA PARÊNTESES, COLCHETES E CHAVES
+\newcommand{\pr}[1]{\ensuremath{\left[#1\right]}} %parênsteses retos
+\newcommand{\pc}[1]{\ensuremath{\left(#1\right)}} %oparenteses curvos
+\newcommand{\barra}[1]{\ensuremath{\left|#1\right|}}%barra
+\newcommand{\chav}[1]{\ensuremath{\left\{#1\right\}}}%chaves
+%######################################################################
+
+
+%CORES#########################################
+\newcommand{\red}[1]{{\color{red}{#1}}}
+\newcommand{\blu}[1]{{\color{blue}{#1}}}
+\newcommand{\gre}[1]{{\color{\green}{#1}}}
+%========================================
+
+%DESAFIO E ATENÇÃO
+\newcommand{\desafio}[1]{{\contour{green}{\color{black}\scshape Desafio:} \textsl{#1}}}
+\newcommand{\atencao}[1]{{\contour{red}{\color{black}\scshape Atenção:} \textsl{#1}}}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}%MUDANÇA DE COR AO CANCLER TEXTO
+
+%COMANDO SOLUÇÃO
+\newcommand{\solution}{\noindent\textbf{Solução:}}
+
+
+
+
+%NOVO AMBIENTE MINIPAGE
+\newcommand{\minipag}[2]{\begin{minipage}{#1\textwidth} #2\end{minipage}} %ambiente minipage
+
+
+%LINHA NO FINAL DA SOLUÇÃO DO EXEMPLO
+\newcommand{\fimex}{\xrfill[0.7ex]{1 pt}[red]$\blacksquare$\xrfill[0.7ex]{1 pt}[red]}
+
+%TEXTO EM TORNO DA FIGURA-RENOMEANDO AMBIENTE PARPIC-MINIPAGE
+\newcommand{\figtext}[4]{%
+\pichskip{#1}%distância entre texto e figura
+\parpic[#2]{%localização direita ou esquerda (l or r)
+\begin{minipage}{#3\textwidth}
+#4
+\end{minipage}
+}%
+}%
+
+%NEGRITO NO MODO MATEMÁTICO E INSERÇÃO DE FÓRMULAS NOS TÍTULOS
+\newcommand{\boldmat}[1]{\boldmath #1 \unboldmath}
+\newcommand{\formula}[1]{\texorpdfstring{#1}{}}
+%=========================================================
+%COMANDO DE NOTA
+\newcommand{\nota}[1]{%
+\vspace{0.4cm}
+\hrule
+\hspace{-0.6cm}\begin{minipage}{0.1\textwidth}
+ \noindent\includegraphics{preamb/figs/FigNota.jpg}
+ \end{minipage}\hfill
+ \begin{minipage}{0.85\textwidth}
+\vspace{0.2cm}
+\hspace{-0.4cm}\textbf{Nota}
+\vspace{0.2cm}
+
+  #1
+  \end{minipage}
+  \vspace{0.2cm}
+\hrule \vspace{0.3cm}
+}

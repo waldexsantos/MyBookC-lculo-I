@@ -1,0 +1,135 @@
+\usepackage[brazil]{babel}% escolha de línguas (importado pacote para português e inglês);
+\usepackage[utf8]{inputenc}%permite a entrada de caracteres em formato UTF-8 nos arquivos tex;
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,headheight=15.4pt]{geometry} %conf. página
+%________________________________________________________________________________________
+% PACOTES MATEMÁTICA
+\usepackage{amsmath,amssymb,amsthm} % fontes, símbolos e ambientes adicionais (teorema e derivados)
+\everymath{\displaystyle} %simbolos matemático sempre do mesmo tamanho
+\usepackage{mathtools}% extensões para facilitar a escrita de fórmulas matemáticas (inclui o pacote amsmath);
+\usepackage{cancel} %cancelar termos numa expressão matemática
+\usepackage{chngcntr} %possibilita redefinir a numeração dos floats – tabelas, figuras, algoritmos e equações;
+\usepackage{array}
+%________________________________________________________________________________________
+\usepackage{glossaries}%permite a criação de listas de símbolos e abreviaturas;
+\usepackage{pdfpages}%faz a inclusão de páginas em PDF no documento final;
+\usepackage{verbatim} %insere textos exatamente como digitados
+\usepackage{lipsum}%textos aleatorios com o comando \lipsum[n. de parágrafos]
+ \usepackage{blindtext}%gerar texto aleatório com os comandos varianes do \blindtext
+\usepackage{pifont} %simbolos especiais do pacote pifont
+%________________________________________________________________________________________
+%LISTAS
+\usepackage{paralist}%permite listas especiais
+\usepackage{multicol} %MULTICOLUNAS
+\usepackage[inline,shortlabels]{enumitem}%listas na mesma linha
+%________________________________________________________________________________________
+%FIGURAS E TABELAS
+\usepackage{float} %usar H em figura
+\usepackage{picinpar} %ambiente parpic - figura ao lado do texto
+\usepackage{PacotesExtra/picins} %UTILIZAR O COMANDO PARPIC (dependência)
+%\usepackage{floatflt} %ambinte floating - fig. ao lado do texto
+%\usepackage[table]{xcolor} %colocar cor na primeira linha da tabela
+\usepackage{wrapfig} %Necessário para o ambiente wrapfing - figura ao lado do texto contornando
+\usepackage{subfigure} %necessário para o ambiente floatingfigure - figura ao lado do texto
+\usepackage[pages=some]{background}% colocar IMAGEM DE FUNDO
+\usepackage[hypcap=false]{caption}%% configurar o tit. da fig. e tab.-altera a formatação de certas legendas;
+\usepackage{rotating} %rotaciona figuras e tabelas com o ambinete \begin{sidewaysfigure} e ambiente landscap
+\usepackage{longtable}%tabelas logas que tomam mais de uma página
+\usepackage{graphicx,xcolor}%importação e utilização de imagens;
+ \usepackage{colortbl} %para tabelas coloridas
+ \usepackage{booktabs,tabularx,multirow}	% para tabelas
+
+%\usepackage{subcaption} % % subfigura ou subtabela
+%\usepackage{lscape} %Colocar página em formato paisagem
+%________________________________________________________________________________________
+%FONTES E TEXTO
+%\usepackage{lmodern}%carrega a família de fontes Latin Modern, que possui maior abrangência de caracteres;
+%\usepackage{times} %carrega fonte Times New Roman;
+%\usepackage{uarial}%: carrega fonte URW Arial.
+\usepackage{calrsfs} %letras caligráficas
+%\usepackage{lettrine} % Para paragrafo no estilo biblia
+\usepackage{indentfirst}%%%% indent first line %%%%
+\usepackage{icomma}% define a vírgula como separador de decimais no amb. matemático(padrão port. brasileiro);
+\usepackage{setspace} %para definir espaçamentos entre linhas 
+%________________________________________________________________________________________
+
+\usepackage{pdflscape} % rotaciona uma página na saida pdf
+\usepackage{upquote}% copy and paste from PDF (correctly) %
+\usepackage{listings}
+\usepackage{cite}% citation %
+%\usepackage{tabto}
+\usepackage{cprotect} %Resolver conflitos do verbatim com o \verb
+\usepackage[normalem]{ulem}
+%________________________________________________________________________________________
+\usepackage{ifthen}% permite a utilização de condições na geração do texto;
+%\usepackage{marginnote}% para notas lado da página com o comando \marginnote{texto}[Afast vestical]
+\usepackage{fancybox} % para molduras adicionais nas caixas
+%PACOTES PARA CITAÇÕES EM CAPÍTULOS (consulta documentação em overleaf)
+\usepackage{quotchap}
+\usepackage{epigraph}
+%==================================
+\usepackage{contour} %COLOCAR CONTORNO EM TEXTO
+\usepackage{framed}%caixa simples para colocar texto - AMBIENTE FRAMED
+\usepackage[listings]{tcolorbox} % caixa de textos personalizadas - ver ARQ. TESTANDO COMANDOS
+ \usepackage{varwidth}
+ \usepackage{subfiles} % Best loaded last in the preamble (CAP INDEPENDENTES)
+%________________________________________________________________________________________
+%I##########INDICE REMESSIVO#################################################
+\usepackage{imakeidx} %permite a criação de um índice remissivo ao fim do texto;
+%\makeindex[options= -s IndexStyle.ist]
+\makeindex[columns=3, title=Índice Remissivo,   options= -s IndexStyle.ist]
+%________________________________________________________________________________________
+%########CONFIG. PDF LINKS##############################################
+\usepackage[hyphens,spaces,obeyspaces]{url} %gera os links entre referências no PDF;
+%\usepackage{varioref} %utilizar o comando \vref que imprime algo tipo "5 on page 25"
+
+\usepackage[pdfborder={0 0 0 [0 0]},colorlinks=true,linktocpage=true,linkcolor=red,citecolor=cyan,filecolor=blue,urlcolor=blue,pdfauthor={Valdex Santos},pdftitle={Cálculo de uma Variável Real - Vol. I}]{hyperref}
+
+%cCONFIGURAÇÕES DE CABEÇALHO
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{Cálculo Diferencial e Integral}
+\fancyhead[LO]{\rightmark}
+\fancyhead[LE,RO]{\thepage}
+%license footnote
+\cfoot{\tiny{\copyright Valdex Santos}}
+%*************************************************************
+%%% OUTRAS CONFIGURAÇÕES %%%%
+\let\cleardoublepage\clearpage% no blank pages between chapters
+\DeclareTextFontCommand{\emph}{\bfseries}%emphasis \emph
+\def\E#1{\mathrm{E}\!#1\!}
+\def\NaN{\mathrm{NaN}\!}
+
+%&&&&&&&&ENTRADA DE ARQUIVOS &&&&&&&&&&&&&&&&&&&&&&&&
+\input{preamb/NewCommands}
+\input{preamb/NewAmbientes}
+%\input{preamb/tikz}
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\usepackage{xhfill}
+\newcommand{\xfill}[2][1ex]{{%
+  \dimen0=#2\advance\dimen0 by #1
+  \leaders\hrule height \dimen0 depth -#1\hfill%
+}}
+\newcommand{\xfilll}[2][1ex]{%
+  \dimen0=#2\advance\dimen0 by #1%
+  \leaders\hrule height \dimen0 depth -#1\hfill%
+}
+%#########################################################
+%PACOTE MINITOC PARA SUBMENUS NOS CAPÍTULOS com o comando minitoc
+\usepackage{minitoc}
+\renewcommand{\mtctitle}{Conteúdos do Capítulo} %Renomeando os subcapítulos
+%####################################################
+\usepackage{bookmark} % to add bookmark manually
+ \renewcommand{\arraystretch}{1.5} %space between rows in tables
+
+
+
+\input preamb/preambulo_book.tex
+
+
+

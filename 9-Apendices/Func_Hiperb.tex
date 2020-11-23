@@ -1,0 +1,205 @@
+\cleardoublepage\documentclass[../main.tex]{subfiles}
+\begin{document}
+\chapter{Funções Hiperbólicas}\label{cap:FuncHyiperb}\index{Função!Hiperbólicas}
+
+\section{Derivada de funções hiperbólicas}\index{Derivadas!hiperbólicas}
+\section{Integral de funções hiperbólicas}\index{Integral!hiperbólica}
+Nesta subseção, usaremos alguns artifícios para resolver algumas integrais que envolvem funções trigonométricas e, para isto, será necessário lembrar das seguintes identidades:
+\begin{multicols}{2}
+1. \(\quad\cosh^2(u)- {\rm senh}^2(u)=1\);
+
+2. \(\quad{\rm sech}^2(u)- {\rm tgh}^2(u)=1\);
+
+3. \(\quad{\rm cotgh}^2(u) - {\rm cossech}^2(u) =1\);
+
+4. \(\quad{\rm senh}^2(u) = \dfrac{\cosh (2u)-1}{2}\);
+
+5. \(\quad\cosh^2(u) = \dfrac{\cosh(2u)+1}{2} \).
+\end{multicols}
+\subsection{Integração do seno, cosseno e tangente hiperbólico}
+
+\subsection[\formula{Integrais do tipo $\int{\rm senh}^m(x) \cosh^n(x)\,dx$ }]{\boldmat{Integrais do tipo $\int{\rm senh}^m(x) \cosh^n(x)\,dx$ }}
+\paragraph*{Caso I: Um dos expoentes \(m\) ou \(n\) é um inteiro positivo ímpar}
+\begin{compactenum}[i.]
+\item Se \(m\) é um número ímpar e \(n\) é qualquer número, então expressamos a integral da seguinte forma:
+\[ \begin{array}{lcl} \mathlarger{\int}{\rm senh}^m(x) \cosh^n(x)\,dx &=& \mathlarger{\int}{\rm senh}^{m-1}( x) \cosh^n (x)\,{\rm senh} (x)\,dx\end{array} \]
+\item Se \(n\) é um número ímpar e \(m\) é qualquer número, então expressamos a integral da seguinte forma:
+
+\[ \begin{array}{lcl} \mathlarger{\int}{\rm senh}^m (x) \cosh^n(x)\,dx &=& \mathlarger{\int}{\rm senh}^{m}( x) \cosh^{n-1} (x)\,\cosh (x)\,dx\\ \end{array} \]
+\end{compactenum}
+\begin{ex}
+Calcule
+\[\mathlarger{\int}{\rm senh}^5(x) \sqrt{\cosh (x)}\,dx\]
+
+\begin{solution}
+\[ \begin{array}{rcl} \mathlarger{\int}{\rm senh}^5(x) \sqrt{\cosh(x)}\,dx &=& \mathlarger{\int}\left({\rm senh}^4(x) \cosh^{1/2}(x)\,\right){\rm senh}(x)\,dx\\ &= &\mathlarger{\int}\left((\cosh^2(x)-1)^2 \cosh^{1/2}(x)\,\right){\rm senh}(x)\,dx\\ &=& \mathlarger{\int}\left(\cosh^{9/2}(x) -2\cosh^{5/2}(x)+ \cosh^{1/2}(x)\right){\rm senh}(x)\,dx \end{array} \]
+Na última integral, fazemos \(u=\cosh(x) \), então \(du= {\rm senh}(x)\,dx\). Portanto,
+
+\[ \begin{array}{rcl} \mathlarger{\int}{\rm senh}^5(x) \sqrt{\cosh(x)}\,dx &=& \mathlarger{\int}\left(u^{9/2} -2u^{5/2}+ u^{1/2}\right)\, du\\ &=& \dfrac{2}{11}u^{11/2} -\dfrac{4}{7}u^{7/2}+ \dfrac{2}{3}u^{3/2}+c.\\ \\ &=& \dfrac{2}{11}\cosh^{11/2}(x) -\dfrac{4}{7}\cosh^{7/2}(x)+ \dfrac{2}{3}\cosh^{3/2}(x)+c. \end{array} \]
+\end{solution}
+\end{ex}
+
+As fórmulas de redução a seguir podem ser usadas para integrar $\senh x$ e $\cosh x$ para qualquer expoente $n$, par ou ímpar (suas provas são deixadas como exercícios; veja Exercício 64 do livro de \citeonline{SmithCalculus}).
+\begin{framed}
+\textbf{Fórmulas de redução para seno e cosseno}
+\begin{align}
+    \senh\!\!^n x\, dx=-\frac{1}{n}\senh\!\!^{n-1}\, x \cosh x+\frac{n-1}{n}\int \senh\!\!^{n-2} x\, dx\label{eq:FormRedsenh^n}\\
+    \cosh^n x\, dx=\frac{1}{n}\cosh^{n-1} x\, \senh\!\! x+\frac{n-1}{n}\int \cosh^{n-2} x\, dx\label{eq:FormRedcosh^n}
+\end{align}
+\end{framed}
+
+\begin{ex}
+  Calcule $\int \senh\!\!^4\, dx$
+  \begin{resol}
+    Aplicando a equação \eqref{eq:FormRedsenh^n} com $n=4$,
+    \begin{equation}
+        \int \senh\!\!^4\, dx=-\frac{1}{4}\senh\!\!^3\, x\cosh x+\frac{3}{4}\int \senh\!\!^2 x\, dx\label{eq:intsenh^4ex}
+    \end{equation}
+       Então aplicando a Eq. \eqref{eq:FormRedsenh^n} novamente na integral da direita:
+    \begin{equation}
+        \int \senh\!\!^2 x\, dx=-\frac{1}{2}\senh\!\!\, x\cosh x+\frac{1}{2}\int  dx=-\frac{1}{2}\senh\!\!\, x\cosh x+\frac{1}{2}x+C\label{eq:intsenh^2ex}
+    \end{equation}
+    Usando as Equações \eqref{eq:intsenh^4ex} e \eqref{eq:intsenh^2ex}, obtemos
+    \begin{equation*}
+         \int \senh\!\!^4\, dx=-\frac{1}{4}\senh\!\!^3\, x\cosh x-\frac{3}{8}\senh\!\!\, x\cosh x+\frac{3}{8}x+C
+    \end{equation*}
+  \end{resol}
+\end{ex}
+
+\paragraph*{Caso II: Os expoentes \(m\) ou \(n\) são inteiros pares}
+\begin{compactenum}[i.]
+\item Se $m\leq n$, use a identidade $\senh\!\!^2 x = 1 - \cosh^2 x$ para escrever
+\begin{align}
+    \int \senh\!\!^m x \cosh^n x\, dx&=\int (\senh\!\!^2)^{m/2} x \cosh^n x\, dx\nonumber\\
+    &=\int (1 - \cosh^2 x)^{m/2}\cosh^n x\, dx
+\end{align}
+Expanda a integral à direita para obter uma soma das integrais de potências de $\cosh x$ e use a fórmula de redução \eqref{eq:FormRedcosh^n}.
+
+\item Se $m\geq n$, use a identidade $\cosh^2 x = 1 - \senh\!\!^2 x$ para escrever
+\begin{align}
+    \int \senh\!\!^m x \cosh^n x\, dx&=\int \senh\!\!)^m x (\cosh^2)^{n/2} x\, dx\nonumber\\
+    &=\int \senh\!\!^m (1 - \senh\!\!^2 x)^{n/2}\, dx
+\end{align}
+Expanda a integral à direita para obter uma soma das integrais de potências de $\senh x$ e use a fórmula de redução (\ref{eq:FormRedsenh^n}).
+\end{compactenum}
+
+\subsection[\formula{Integrais do tipo   $\int {\rm tgh} ^m (x)\, {\rm sech}^n(x)\,dx$}]{\boldmat{Integrais do tipo   $\int {\rm tgh} ^m (x)\, {\rm sech}^n(x)\,dx$}}
+\begin{compactenum}[i]
+\item Se \(m\) é um inteiro positivo ímpar, então expressamos a integral da seguinte forma:
+\[ \begin{array}{lcl} \mathlarger{\int} {\rm tgh} ^m (x) {\rm sech}^n(x)\,dx &=& \mathlarger{\int} {\rm tgh} ^{m-1} (x)\, {\rm sech}^{n-1}(x) {\rm tgh} (x) {\rm sech} (x)\,dx\end{array} \]
+\item Se \(n\) é um inteiro positivo par, então expressamos a integral da seguinte forma:
+
+\[ \begin{array}{lcl} \mathlarger{\int} {\rm tgh}^m (x) {\rm sech}^n(x)\,dx &=& \mathlarger{\int} {\rm tgh} ^m (x)\, {\rm sech}^{n-2}(x) {\rm sech}^2 (x)\,dx\\ \end{array} \]
+\end{compactenum}
+
+\begin{ex}[$m$ é um inteiro impar]~
+\\ Determinemos a seguinte integral: \[ \mathlarger{\int}{\rm tgh}^3( x) \sqrt{{\rm sech}(x)}\,dx\]\\
+
+\begin{solution}
+\[ \begin{array}{rcl} \mathlarger{\int}{\rm tgh}^3 (x) \sqrt{{\rm sech}(x)}\,dx &=&\mathlarger{\int}\dfrac{{\rm tgh}^2( x)}{\sqrt{{\rm sech}(x)}}\left({\rm tgh}( x)\, {\rm sech}(x)\right)dx\\ &=&\mathlarger{\int}\dfrac{1- {\rm sech}^2( x)}{\sqrt{{\rm sech}(x)}}\left({\rm tgh}( x)\, {\rm sech}(x)\right)dx\\ &=&-\mathlarger{\int} \left({\rm sech}^{-1/2}( x) - {\rm sech}^{3/2}( x)\right) \left(-{\rm tgh}( x)\, {\rm sech}(x)\right)dx\\ \end{array} \]
+Fazendo \(u={\rm sech}(x) \), temos que \( du=-{\rm tgh}(x){\rm sech}(x)\,dx \). Logo,
+
+\[ \begin{array}{rcl} \mathlarger{\int}{\rm tgh}^3 (x) \sqrt{{\rm sech}(x)}\,dx &=&-\mathlarger{\int} \left(u^{-1/2} - u^{3/2}( x)\right) du= - \left(2 \sqrt{u}-\dfrac{2}{5} u^{5/2} \right)+c\\ &=& - \left(2 \sqrt{{\rm sech}(x)}-\dfrac{2}{5} {\rm sech}^{5/2}( x) \right)+c\\ &=& \dfrac{2\sqrt{{\rm sech}(x)}}{5}\left({\rm sech}^{2} (x) -5\right)+c. \end{array} \]
+\end{solution}
+\end{ex}
+
+\begin{ex}[$n$ é um inteiro par]~
+\\Calcule
+\[ \mathlarger{\int} {\rm tgh}^2(x) {\rm sech}^{4}(x)\, dx\]
+
+\begin{solution}
+\[ \begin{array}{rcl} \mathlarger{\int} {\rm tgh}^2(x) \,{\rm sech}^{4}(x)\, dx &=& \mathlarger{\int} {\rm tgh}^2( x)(1-{\rm tgh}^2( x))\left( {\rm sech}^2( x)\right)\, dx\\ &=& \mathlarger{\int} \left({\rm tgh}^2 (x) -{\rm tgh}^4 (x)\right)( {\rm sech}^2 (x)\, dx)\\ \end{array} \]
+Fazendo \( u={\rm tgh}(x)\), temos que \( du={\rm sech}^2(x)\,dx \). Assim,
+
+\[ \begin{array}{rcl} \mathlarger{\int} {\rm tgh}^2(x) \,{\rm sech}^{4}(x)\, dx &=& \mathlarger{\int} \left(u^2 -u^4\right)du=\frac{u^3}{3}-\frac{u^5}{5}\\ &=&\dfrac{1}{3}{\rm tgh}^3( x) -\dfrac{1}{5}{\rm tgh}^5( x)+c. \end{array} \]
+
+\end{solution}
+\end{ex}
+\subsection[\formula{Integrais do tipo   $\int {\rm cotgh} ^m (x)\, {\rm cossech}^n(x)\,dx$}]{\boldmat{Integrais do tipo   $\int {\rm cotgh} ^m (x)\, {\rm cossech}^n(x)\,dx$}}
+\begin{compactenum}[i.]
+\item  se \(m\) é um inteiro positivo ímpar, então expressamos a integral da seguinte forma: 
+\[ \begin{array}{lcl} \mathlarger{\int} {\rm cotgh} ^m (x) {\rm cossech}^n(x)\,dx &=& \mathlarger{\int} {\rm cotgh} ^{m-1}( x)\, {\rm cossech}^{n-1}(x) {\rm cotgh} (x) {\rm cossech} (x)\,dx\\ \end{array} \]
+\item Se \(n\) é um inteiro positivo par, então expressamos a integral da seguinte forma:
+
+\[ \begin{array}{lcl}  \mathlarger{\int} {\rm cotgh}^m (x) {\rm cossech}^n(x)\,dx &=& \mathlarger{\int} {\rm cotgh}^m (x)\, {\rm cossech}^{n-2}(x) {\rm cotgh}(x) {\rm cossech}^2(x)\,dx\end{array} \]
+\end{compactenum}
+
+\begin{ex}[$m$ é um inteiro impar]~
+\\Calcule
+\[ \mathlarger{\int}{\rm cotg}h^5( x) \,{\rm cossech}^3 (x)\,dx\]\\
+
+\begin{solution}
+\[ \begin{array}{lll} \hspace*{-1.2cm}\mathlarger{\int}{\rm cotgh}^5( x) \,{\rm cossech}^3 (x)\,dx &=& \mathlarger{\int}{\rm cotgh}^4( x) \,{\rm cossech}^2 (x)\left({\rm cotgh} (x)\, {\rm cossech} (x)\right)dx\\ &=& \mathlarger{\int}(1+{\rm cossech}^2 (x))^2 \,{\rm cossech}^2( x)\left({\rm cotgh} (x)\, {\rm cossech} (x)\right)dx\\ &=& -\mathlarger{\int}(1+{\rm cossech}^2 (x))^2 \,{\rm cossech}^2( x)\left(-{\rm cotgh} (x)\, {\rm cossech} (x)\right)dx\\ \end{array} \]
+Fazendo \(u={\rm cossech}(x) \), temos que \( du=-{\rm cotgh}(x){\rm cossech}(x)\,dx \). Logo,
+
+\[ \begin{array}{rcl} \mathlarger{\int}{\rm cotgh}^5( x) \,{\rm cossech}^3 (x)\,dx&=& -\mathlarger{\int}(1+u^2 )^2 u^2du=-\mathlarger{\int}(u^6+2u^4 + u^2)du\\ &=&-\dfrac{u^7}{7}-\dfrac{2u^5}{5}-\dfrac{u^3}{3}+c\\ &=&-\dfrac{{\rm cossech}^7(x)}{7}-\dfrac{2{\rm cossech}^5(x)}{5}-\dfrac{{\rm cossech}^3(x)}{3}+c. \end{array} \]
+\end{solution}
+\end{ex}
+\begin{ex}[$n$ é um inteiro par]~
+\\Calcule
+\[ \mathlarger{\int} {\rm cossech}^6( x)\, dx\]\\
+\begin{solution}
+\[ \begin{array}{rcl} \mathlarger{\int} {\rm cossech}^6(x)\, dx &=& \mathlarger{\int}\left({\rm cotgh}^2( x) -1\right)^2\left({\rm cossech}^2 (x)\right)\,dx\\ &=& -\mathlarger{\int}({\rm cotgh}^4 (x) -2 {\rm cotgh}^2( x) +1)\left(-{\rm cossech}^2( x)\right)\,dx\\ \end{array} \]
+Fazendo \( u={\rm cotgh}(x)\), temos que \( du=-{\rm cossech}^2(x)\,dx \). Assim,
+
+\[ \begin{array}{rcl} \mathlarger{\int} {\rm cossech}^6(x)\, dx &=&-\mathlarger{\int}(u^4 -2 u^2 +1)du=-\dfrac{u^5}{5}+\dfrac{2u^3}{3}-u\\ &=&-\dfrac{1}{5} {\rm cotgh}^5( x) +\dfrac{2}{3} {\rm cotgh}^3( x) -{\rm cotgh}( x) +c \end{array} \]
+\end{solution}
+\end{ex}
+
+\subsection[\formula{Integrais do tipo $\int \senh(mx)\,\cosh(nx)\,dx$}]{\boldmat{Integrais do tipo $\int \senh(mx)\,\cosh(nx)\,dx$}}
+Para determinar as integrais do tipo $\int \senh(mx)\,\cosh(nx)\,dx$ recorremos a identidade trigonométrica:
+\begin{equation}
+    {\rm senh}(mx)\,\cosh(nx)= \dfrac{1}{2}\left[ {\rm senh}((m+n)x) +{\rm senh}((m-n)x)\right]
+\end{equation}
+Além disso, são usadas também: \({\rm senh}(-u)=-{\rm senh}(u)\) e \(\cosh(-u)=\cosh(u)\).
+\begin{ex}
+Calcule a integral \(\mathlarger{\int} {\rm senh}(x)\,\cosh (4x)\,dx\)
+
+\begin{solution}
+\[ \begin{array}{rcl} \mathlarger{\int} {\rm senh}(x)\,\cosh( 4x)\,dx& =& \dfrac{1}{2}\mathlarger{\int}[ {\rm senh}(x+4x) + {\rm senh}(x-4x) ]dx\\ &=&\dfrac{1}{2}\mathlarger{\int}[ {\rm senh}(5x) -{\rm senh}(3x) ]dx = \dfrac{1}{10}\cosh( 5x) - \dfrac{1}{6}\cosh( 3x) +c. \end{array} \]
+\end{solution}
+\end{ex}
+\subsection[\formula{Integrais do tipo $\int  \senh(mx)\,\senh(nx)\,dx$}]{\boldmat{Integrais do tipo $\int  \senh(mx)\,\senh(nx)\,dx$}}
+Para determinar as integrais do tipo $\int  \senh(mx)\,\senh(nx)\,dx$ recorremos a identidade trigonométrica:
+\begin{equation}
+   {\rm senh}(mx)\,{\rm senh}(nx)= \dfrac{1}{2}\left[ \cosh((m+n)x) -\cosh((m-n)x)\right]
+\end{equation}
+Além disso, são usadas também: \({\rm senh}(-u)=-{\rm senh}(u)\) e \(\cosh(-u)=\cosh(u)\).
+
+\begin{ex}
+Calcule \(\mathlarger{\int} {\rm senh}(3x)\,{\rm senh}(4x)\,dx\)
+
+\begin{solution}
+\[ \begin{array}{rcl} \mathlarger{\int} {\rm senh}(3x)\,{\rm senh}(4x)\,dx &=& \dfrac{1}{2}\mathlarger{\int}[\cosh(3x+4x) - \cosh(3x-4x)]dx \\ &=&\dfrac{1}{2}\mathlarger{\int}[\cosh(7x) - \cosh(x)]dx = \dfrac{1}{14}{\rm senh}(7x)- \dfrac{1}{2}{\rm senh}(x) +c. \end{array} \]
+\end{solution}
+\end{ex}
+
+\subsection[\formula{Integrais do tipo $\int  \cosh(mx)\,\cosh(nx)\,dx$}]{\boldmat{Integrais do tipo $\int  \cosh(mx)\,\cosh(nx)\,dx$}}
+Para determinar as integrais do tipo $\int  \cosh(mx)\,\cosh(nx)\,dx$ recorremos a identidade trigonométrica:
+\begin{equation}
+   \cosh(mx)\,\cosh(nx)= \dfrac{1}{2}\left[ \cosh((m+n)x) +\cosh((m-n)x)\right]
+\end{equation}
+Além disso, são usadas também: \({\rm senh}(-u)=-{\rm senh}(u)\) e \(\cosh(-u)=\cosh(u)\).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

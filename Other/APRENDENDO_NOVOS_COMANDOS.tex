@@ -1,0 +1,54 @@
+%==================================================================
+%CONTORNO EM TEXTO
+\usepackage{contour}
+%\contourlength{0.5pt} % controle da espessura do contorno
+
+{\Huge \contour{red}{\color{white}\scshape Atenção:}}
+%=================================================================================
+
+%COR DE FUNDO NO TEXTO
+\colorlet{shadecolor}{black!15} % cor do fundo usando xcolor
+\begin{shaded∗}
+O texto com fundo pode ser produzido facilmente com o pacote \texttt{framed}.
+\end{shaded∗}
+%==================================================================================
+
+% MARCA D'AGUA EM TODAS AS PÁGINAS
+\usepackage{eso-pic}
+\AddToShipoutPicture{%
+\AtPageLowerLeft{%
+\unitlength=\paperwidth
+\begin{picture}(1.0,1.0)
+\put(0.3,0.5){\rotatebox{45}{%
+\scalebox{5}{\color{black!25}Rascunho}}%PALAVRA RASCUNHO
+}
+\end{picture}
+}%
+}%
+
+%====================================================================
+%CANCELAMENTO EM EQUAÇÕES
+
+\usepackage{cancel}
+\renewcommand{\CancelColor}{\color{red}} %cor de cancelamento pode ser alterado
+\[x+\cancel{2y} = z \]
+\[x+\bcancel{2y} = z \]
+\[x+\xcancel{2y} = z \]
+\[x+\cancelto{0}{2y} = z \]
+
+
+%===================================================================
+%TABULAÇÃO EM AMBIENTES
+\NumTabs{5}
+\begin{enumerate*}[1.,itemjoin={\tab}]
+\item Item 1
+\item Item 2
+\item Item 3
+\item Item 4
+\item Item 5
+\item Item 6
+\item Item 7
+\item Item 8
+\item Item 9
+\item Item 10
+\end{enumerate*}

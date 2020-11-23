@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATENÇÃO
+%
+% POR SEGURANÇA, NÃO EDITE ESTE ARQUIVO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\documentclass[12pt]{book}
+
+%\usepackage{tocvsec2}
+\input preamb/preambulo.tex
+\include{capa-prefacio/capa2}
+\begin{document}
+\def\sectionautorefname{seção} %Para que seção apareça pequeno no texto
+\BgThispage
+\frontmatter
+\clearpage
+\title{{\bfseries\itshape\color{red!50!black}
+\fontsize{36pt}{46pt}\selectfont
+Cálculo de Funções de Uma Variável\par\vspace{0.2cm}
+\large{Volume I}\par}}
+\author{\bfseries \huge Prof. Valdex Santos}
+\date{Jequié 2020}
+\addcontentsline{toc}{chapter}{Capa}
+
+\maketitle
+
+\include{capa-prefacio/prefacio}
+\dominitoc
+\tableofcontents
+\adjustmtc\adjustmtc
+
+%\addcontentsline{toc}{chapter}{Sumário}
+\mainmatter
+\subfile{1-cap_func/cap_func}
+\subfile{2-cap_lim/cap_limites}
+\subfile{3-cap_derivadas/cap_derivadas}
+\subfile{4-cap_apl_derivadas/cap_apl_derivadas}
+\subfile{5-Int_Indefinida/Cap_Int_Indefinida}
+\subfile{6-Cap-Int_Def/Cap-Int_Def}
+\subfile{7-cap_apl_integracao/cap_apl_integracao}
+%\subfile{Other/TESTANDO_COMANDOS}
+\include{8-cap_respostas/cap_respostas}
+
+\appendix
+\subfile{9-Apendices/Func_Hiperb.tex}
+\subfile{9-Apendices/AproxLinear-MetNewton}
+
+%references
+%\nocite{*}
+%\bibliographystyle{plain}%plain, alpha,
+\bibliography{./RefBib/references}
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+\fancyhead[RE]{Cálculo Integral e Diferencial}
+\fancyhead[LO]{REFERÊNCIAS BIBLIOGRÁFICAS}
+\fancyhead[LE,RO]{\thepage}
+
+
+
+\clearpage
+\addcontentsline{toc}{chapter}{Índice Remissivo}
+\fancyhead[RE]{Cálculo Integral e Diferencial}
+\fancyhead[LO]{ÍNDICE REMISSIVO}
+\fancyhead[LE,RO]{\thepage}
+\printindex
+\end{document}
